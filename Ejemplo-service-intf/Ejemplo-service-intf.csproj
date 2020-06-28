@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>prueba.ejemplo.service.intf</RootNamespace>
+    <Version>1.0.0</Version>
+    <AssemblyName>Ejemplo-service-intf-$(Version)</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ejemplo-common\Ejemplo-common.csproj" />
+    <ProjectReference Include="..\Ejemplo-model\Ejemplo-model.csproj" />
+  </ItemGroup>
+
+</Project>
