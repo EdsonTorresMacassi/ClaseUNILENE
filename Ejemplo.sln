@@ -3,29 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Models", "1.Models", "{6C057574-1665-4D89-9FC7-55055C560AB8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Models", "2.Models", "{6C057574-1665-4D89-9FC7-55055C560AB8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Dao", "2.Dao", "{5C583D56-F588-4065-955F-DF0874B0F896}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Dao", "3.Dao", "{5C583D56-F588-4065-955F-DF0874B0F896}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Services", "3.Services", "{857CC294-F9D0-4997-AFB7-F8290ACB2863}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Services", "4.Services", "{857CC294-F9D0-4997-AFB7-F8290ACB2863}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Common", "4.Common", "{BF2E020A-408C-415B-A933-8AA803E0B98F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Common", "1.Common", "{BF2E020A-408C-415B-A933-8AA803E0B98F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Api", "5.Api", "{25871643-8410-4A9D-82D8-48AC20816F47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo-dao-imp", "Ejemplo-dao-imp\Ejemplo-dao-imp.csproj", "{A454B13D-0251-42A8-BFE3-DA7CD1408D06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejemplo-dao-imp", "Ejemplo-dao-imp\Ejemplo-dao-imp.csproj", "{A454B13D-0251-42A8-BFE3-DA7CD1408D06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo-model", "Ejemplo-model\Ejemplo-model.csproj", "{01DA08F3-ED3F-4BA9-9E09-977DC011F014}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejemplo-model", "Ejemplo-model\Ejemplo-model.csproj", "{01DA08F3-ED3F-4BA9-9E09-977DC011F014}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo-dao-intf", "Ejemplo-dao-intf\Ejemplo-dao-intf.csproj", "{9698DB3A-F986-4CFE-8A5F-99DDFFB866DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejemplo-dao-intf", "Ejemplo-dao-intf\Ejemplo-dao-intf.csproj", "{9698DB3A-F986-4CFE-8A5F-99DDFFB866DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo-service-imp", "Ejemplo-service-imp\Ejemplo-service-imp.csproj", "{EFAF871E-939C-42B9-91B0-B149ADBD23A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejemplo-service-imp", "Ejemplo-service-imp\Ejemplo-service-imp.csproj", "{EFAF871E-939C-42B9-91B0-B149ADBD23A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo-service-intf", "Ejemplo-service-intf\Ejemplo-service-intf.csproj", "{D3A49904-30B2-42B8-8210-CCFAED30AA06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejemplo-service-intf", "Ejemplo-service-intf\Ejemplo-service-intf.csproj", "{D3A49904-30B2-42B8-8210-CCFAED30AA06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo-common", "Ejemplo-common\Ejemplo-common.csproj", "{C6E350FC-E96A-44C2-B799-0DEB87146473}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejemplo-common", "Ejemplo-common\Ejemplo-common.csproj", "{C6E350FC-E96A-44C2-B799-0DEB87146473}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo-backend", "Ejemplo-backend\Ejemplo-backend.csproj", "{D84CE251-A39B-43BC-A100-1D024DD720E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejemplo-backend", "Ejemplo-backend\Ejemplo-backend.csproj", "{D84CE251-A39B-43BC-A100-1D024DD720E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

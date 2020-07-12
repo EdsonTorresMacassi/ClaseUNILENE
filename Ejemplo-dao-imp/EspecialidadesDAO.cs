@@ -2,6 +2,7 @@
 using prueba.ejemplo.dao.intf;
 using prueba.ejemplo.model;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace prueba.ejemplo.dao.imp
         {
             base.txtConnectionString = txtConnectionString;
         }
-
+                             
         public async Task<int> CrearEspecialidad(Especialidades request)
         {
             int response = 0;
@@ -66,5 +67,107 @@ namespace prueba.ejemplo.dao.imp
 
             return response;
         }
+
+        private Especialidades cargarEspecialidades(SqlDataReader dr)
+        {
+            int index = 0;
+            Especialidades model = new Especialidades();
+            model.ESP_ID = SqlHelper.GetInt32(dr, index);
+            index = index + 1;
+            model.ESP_NOMENCLATURA = SqlHelper.GetNullableString(dr, index);
+            index = index + 1;
+            model.ESP_DESCRIPCION = SqlHelper.GetNullableString(dr, index);
+
+            return model;
+        }
+
+        public async Task<List<Especialidades>> ListaEspecialidad()
+        {
+            string sql = @"
+                    SELECT 
+                    ESP_ID, 
+                    ESP_NOMENCLATURA, 
+                    ESP_DESCRIPCION 
+                    FROM dbo.TCOM_ESPECIALIDADES
+                    WHERE ESP_ESTADO = 1
+                    ";
+
+            SqlParameter[] parametro = new SqlParameter[0];
+            SqlDataReader dr = null;
+            SqlConnection cn = null;
+
+            try
+            {
+                List<Especialidades> lista = new List<Especialidades>();
+                cn = new SqlConnection(txtConnectionString);
+                await cn.OpenAsync();
+                dr = await SqlHelper.ExecuteReaderAsync(cn, CommandType.Text, sql, parametro);
+                if (!dr.HasRows) return lista;
+                while (dr.ReadAsync().Result) 
+                {
+                    Especialidades model = cargarEspecialidades(dr);
+                    lista.Add(model);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                SqlHelper.CloseDataReader(dr);
+                SqlHelper.CloseConnection(cn);
+            }
+        }
+
+        public async Task<Especialidades> RetornarEspecialidad(int ESP_ID)
+        {
+            string sql = @"
+                    SELECT 
+                    ESP_ID, 
+                    ESP_NOMENCLATURA, 
+                    ESP_DESCRIPCION 
+                    FROM dbo.TCOM_ESPECIALIDADES
+                    WHERE ESP_ESTADO = 1 
+                    and ESP_ID = @ESP_ID
+                    ";
+
+            SqlParameter[] parametro = new SqlParameter[1];
+            parametro[0] = new SqlParameter("@ESP_ID", SqlDbType.Int);
+            parametro[0].Value = ESP_ID;
+
+            SqlDataReader dr = null;
+            SqlConnection cn = null;
+            Especialidades response = null;
+
+            try
+            {                
+                cn = new SqlConnection(txtConnectionString);
+                await cn.OpenAsync();
+                dr = await SqlHelper.ExecuteReaderAsync(cn, CommandType.Text, sql, parametro);
+                if (!dr.HasRows) return response;
+                while (dr.ReadAsync().Result)
+                {
+                    response = cargarEspecialidades(dr);                    
+                }
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                SqlHelper.CloseDataReader(dr);
+                SqlHelper.CloseConnection(cn);
+            }
+        }
+
+        
     }
 }
